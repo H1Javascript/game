@@ -2,3 +2,5 @@ node_modules/
 app_prod/
 .DS_Store
 .sass-cache/
+
+DOC.md
