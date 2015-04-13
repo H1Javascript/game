@@ -24,6 +24,18 @@ var Routing = {
 
     /**
      *
+     * Recupere le callback d'une page
+     * @param string page
+     * @return mixed
+     *
+     */
+    get: function (page) {
+        return (!this.events[page]) ? false : this.events[page];
+    },
+
+
+    /**
+     *
      * Verifie les routes et trouve les correspondances
      * @return bool
      *
