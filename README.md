@@ -1,4 +1,4 @@
-# Rhythmastic
+# Rhythmnastic
 
 ### Equipe
 1. Kevin TAN
