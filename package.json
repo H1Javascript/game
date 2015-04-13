@@ -1,0 +1,26 @@
+{
+  "name": "Rhythmastic",
+  "version": "1.0.0",
+  "description": "Jeu de dance interactif",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:H1Javascript/game.git"
+  },
+  "author": "Equipe 06 P2019",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H1Javascript/game/issues"
+  },
+  "homepage": "https://github.com/H1Javascript/game",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-for-compass": "0.0.2",
+    "gulp-serve": "^0.3.1",
+    "gulp-useref": "^1.1.2"
+  }
+}
