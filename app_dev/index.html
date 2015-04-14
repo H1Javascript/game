@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Rhythmastic</title>
+
+        <link rel="stylesheet" type="text/javascript" href="styles/main.css">
     </head>
     <body>
 
@@ -14,16 +16,10 @@
         <!--  VENDORS  -->
         <!-- ********* -->
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.23.min.js"></script>
-
         <!-- build:js scripts/vendors.js -->
         <script src="vendors/jquery.js"></script>
         <script src="vendors/handlebars.js"></script>
         <!-- endbuild -->
-
-
-        <!-- ********* -->
-        <!-- LIBRARIES -->
-        <!-- ********* -->
 
         <!-- build:js scripts/app.js -->
         <script src="src/Libraries/Routing.js"></script>
@@ -32,18 +28,11 @@
         <script src="src/Libraries/Container.js"></script>
         <script src="src/Libraries/storageOnlineInterface.js"></script>
 
-
-        <!-- *********** -->
-        <!-- CONTROLLERS -->
-        <!-- *********** -->
         <script src="src/Controllers/musicController.js"></script>
+        <script src="src/Controllers/partitionController.js"></script>
         <script src="src/Controllers/gameController.js"></script>
         <script src="src/Controllers/indexPageController.js"></script>
 
-
-        <!-- ********* -->
-        <!--   MODELS  -->
-        <!-- ********* -->
         <script src="src/Models/userModel.js"></script>
 
         <script src="src/app.js"></script>

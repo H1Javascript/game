@@ -63,5 +63,19 @@ gulp.task('cleanImages', function () {
 });
 
 
+// Move files to prod without changing them
+gulp.task('movePartitions', ['cleanPartitions'], function () {
+  return gulp.src(dev +"/resources/partitions/**/*")
+    .pipe(gulp.dest(prod +'/resources/partitions'));
+});
+
+
+// Clean directories
+gulp.task('cleanPartitions', function () {
+  return gulp.src(prod +"/resources/partitions")
+    .pipe(clean());
+});
+
+
 // Production task
-gulp.task('prod', ['compass', 'compile', 'moveViews', 'moveImages'], function () {});
+gulp.task('prod', ['compass', 'compile', 'moveViews', 'moveImages', 'movePartitions'], function () {});
