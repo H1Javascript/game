@@ -1,13 +1,90 @@
 var gameController = {
+    // Jeu
     partitionIndex: 0,
     refresh: null,
     startTime: 0,
     alreadyPressed: false,
+    points: 0,
+    endCallback: function () {},
+
+    // Elements jQuery
+    container: null,
+    touches: null,
+    pointsContainer: null
 };
 
 
+/**
+ *
+ * Definie les parametres
+ *
+ */
+gameController.setParams = function (container, touches, pointsContainer) {
+    this.container = container;
+    this.touches = touches;
+    this.pointsContainer = pointsContainer;
+};
+
+
+/**
+ *
+ * Definie le callback de fin du jeu
+ * @param function callback
+ *
+ */
+gameController.setEndCallback = function (callback) {
+    this.endCallback = callback
+};
+
+
+/**
+ *
+ * Recupere le temps ecoule depuis le debut du jeu
+ * @return int
+ *
+ */
 gameController.getTimeOffset = function () {
     return new Date().getTime() - gameController.startTime;
+};
+
+
+/**
+ *
+ * Ajoute les points aux points utilisateur
+ * @param int points
+ *
+ */
+gameController.addPoints = function (points) {
+    this.points += points;
+};
+
+
+/**
+ *
+ * Definie l'etat actuel de la reponse
+ * @param string text
+ * @param string classe
+ *
+ */
+gameController.setState = function (text, classe) {
+    gameController.container.children('h1').html(text);
+    gameController.container.addClass(classe);
+
+    setTimeout(function () {
+        gameController.container.children('h1').html('');
+        gameController.container.removeClass(classe);
+    }, 300);
+};
+
+
+/**
+ *
+ * Recupere les points utilisateurs
+ * @param int
+ *
+ */
+gameController.getPoints = function () {
+    return this.points;
 };
 
 
@@ -20,6 +97,11 @@ gameController.startListening = function () {
     Container.music.play();
 
     gameController.startTime = new Date().getTime();
+    gameController.setParams(
+        $('#playerIndicator'),
+        $('#playerKeys').children('button'),
+        $('#points')
+    );
     gameController.refresh = setInterval(gameController.displayBounds, (1000 / 10));
 
     $(document).on('keyup', gameController.listenKeys);
@@ -28,61 +110,28 @@ gameController.startListening = function () {
 
 /**
  *
- * Arrete d'ecouter les touches du clavier
+ * Reset le jeu
  *
  */
-gameController.endListening = function () {
+gameController.reset = function () {
+    clearInterval(gameController.refresh);
+    $(document).unbind('keyup');
 
+    gameController.positionIndex = 0;
+    gameController.startTime = 0;
+    alreadyPressed = false;
 };
 
 
 /**
  *
- * Verifie la touche appuyee
- * @param string direction
+ * Fonction declanchee lorsque le jeu est fini
  *
  */
-gameController.check = function (direction) {
-    var points = 0;
-    var partition = Container.partition.get(gameController.partitionIndex);
-
-    if (gameController.alreadyPressed) return false;
-
-    if (direction == partition.type) {
-        points = (5 - Math.round(((partition.timestamp - gameController.getTimeOffset()) / 100)));
-    }
-
-    //console.log((partition.timestamp - gameController.getTimeOffset()) +" -- "+ Container.partition.get(gameController.partitionIndex).type);
-
-    if (points > 0) {
-        // ajoute points
-        $('#points').html(parseInt($('#points').html()) + (points * 100));
-    }
-
-    // affiche texte
-    var text = "";
-
-    if (points >= 4) {
-        $('#playerIndicator').addClass('perfect');
-        text = "Parfait";
-    } else if (points >= 2) {
-        text = "Bien";
-        $('#playerIndicator').addClass('notbad');
-    } else if (points == 1) {
-        text = "Pas mal";
-        $('#playerIndicator').addClass('notbad');
-    } else {
-        $('#playerIndicator').addClass('fail');
-    }
-
-    $('#playerIndicator h1').html(text);
-
-    setTimeout(function () {
-        $('#playerIndicator h1').html('');
-        $('#playerIndicator').removeClass('perfect').removeClass('notbad').removeClass('fail');
-    }, 300);
-
-    gameController.alreadyPressed = true;
+gameController.gameEnded = function () {
+    Container.music.stop();
+    gameController.reset();
+    gameController.endCallback();
 };
 
 
@@ -113,24 +162,74 @@ gameController.listenKeys = function (event) {
 
 /**
  *
+ * Verifie la touche appuyee
+ * @param string direction
+ *
+ */
+gameController.check = function (direction) {
+    var points = 0;
+    var partition = Container.partition.get(gameController.partitionIndex);
+
+    // Si la touche a deja ete presse
+    if (gameController.alreadyPressed) return false;
+
+    // Si la touche est la bonne
+    // On calcul le nombre de point que l'on donne
+    if (direction == partition.type) {
+        points = (5 - Math.round(((partition.timestamp - gameController.getTimeOffset()) / 100)));
+    }
+
+    // On ajoute les points
+    if (points > 0) {
+        gameController.addPoints(points * 100);
+        gameController.pointsContainer.html(gameController.getPoints());
+    }
+
+    var message = "";
+    var state = "";
+
+    if (points >= 4) {
+        state = "perfect";
+        message = "Parfait";
+    } else if (points >= 2) {
+        message = "Bien";
+        state = "notbad";
+    } else if (points == 1) {
+        message = "Pas mal";
+        state = "notbad";
+    } else {
+        state = "fail";
+
+    }
+
+    gameController.setState(message, state);
+    gameController.alreadyPressed = true;
+};
+
+
+/**
+ *
  * Affiche les ronds
  *
  */
 gameController.displayBounds = function () {
+    // Quand la partition est terminee
+    // On arrête le jeu
     if (gameController.partitionIndex >= Container.partition.get().length) {
-        clearInterval(gameController.refresh);
-        Container.music.stop();
-        console.log('Fin du jeu');
+        gameController.gameEnded();
         return false;
     }
 
     var partition = Container.partition.get(gameController.partitionIndex);
     var difference = Math.round((partition.timestamp - gameController.getTimeOffset()) / 100);
+    var partitionElementLength = $('[data-index="'+ gameController.partitionIndex +'"]').length;
 
-    if (difference == 9 && $('[data-index="'+ gameController.partitionIndex +'"]').length == 0) {
-        $('#playerIndicator').append('<div class="round '+ Container.partition.get(gameController.partitionIndex).type +'" data-index="'+ gameController.partitionIndex +'"></div>');
+    // On affiche le rond 9s avant si l'element n'est pas deja affiche
+    if (difference == 9 && partitionElementLength == 0) {
+        gameController.container.append('<div class="round '+ Container.partition.get(gameController.partitionIndex).type +'" data-index="'+ gameController.partitionIndex +'"></div>');
     }
 
+    // On passe au suivant 4s apres
     if (difference < -4) {
         gameController.alreadyPressed = false;
         gameController.partitionIndex++;
