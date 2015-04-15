@@ -1,11 +1,11 @@
 var Container = new ContainerInterface();
 
-Routing.add('/([a-z]+)/([0-9]+)', function (params) {
-    var username = params[0];
-    var music = params[1];
+// Configurations template
+Pages.setTemplatePath('libraries/views');
 
-    alert(music);
-}, true);
+// Listening Routes
+Routing.add('/', indexPageController.homeAction, true);
+Routing.add('/signup', signupPageController.homeAction, true);
 
 
 Routing.run();
