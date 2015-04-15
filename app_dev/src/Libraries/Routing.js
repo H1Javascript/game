@@ -69,6 +69,10 @@ Routing.check = function () {
  *
  */
 Routing.run = function () {
+    if (window.location.hash == "" || window.location.hash == '#') {
+        window.location.hash = "#/";
+    }
+
     Routing.check();
 
     $(window).on('hashchange', function () {
