@@ -1,0 +1,52 @@
+#homepage {
+
+    .container {
+        height: 300px;
+    }
+
+    h1 {
+        height: 30px;
+        margin-top: calc(50vh - 60px);
+        font-family: "Source Sans Pro";
+        font-size: 35px;
+        font-weight: 100;
+        text-transform: uppercase;
+        text-align: center;
+        color: #d9e9f6;
+        letter-spacing: 2px;
+        transition-duration: 800ms;
+        transform: translateY(100vh);
+
+        span {
+            margin-left: 5px;
+            letter-spacing: 1px;
+            font-weight: normal;
+            color: #B1AEFF;
+            border: solid 3px;
+            border-color: #B1AEFF;
+            padding: 1px 5px 1px 5px;
+        }
+
+
+        &.active {
+            transform: translateY(0vh);
+        }
+    }
+
+    .startingText {
+        margin-top: 120px;
+        text-align: center;
+        display: block;
+        font-weight: 100;
+        color: #c9cfed;
+        text-transform: uppercase;
+        font-family: "Source Sans Pro";
+        font-size: 20px;
+        opacity: 0;
+        transition-duration: 500ms;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}

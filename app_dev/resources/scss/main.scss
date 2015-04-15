@@ -1,107 +1,24 @@
 @import "compass";
 @import "compass/reset";
 
-#playerIndicator {
-    position: relative;
-    z-index: 2;
-    margin-left: 200px;
-    margin-top: 200px;
-    width: 98px;
-    height: 98px;
-    border: solid 2px black;
-    border-radius: 50%;
-
-    &:after {
-        content: "";
-        border-radius: 50%;
-        position: absolute;
-        width: 108px;
-        height: 108px;
-        top: -7px;
-        left: -7px;
-        border: solid 2px black;
-    }
-
-    &.perfect,
-    &.perfect:after {
-        border-color: green;
-    }
-
-    &.notbad,
-    &.notbad:after {
-        border-color: orange;
-    }
-
-    &.fail,
-    &.fail:after {
-        border-color: red;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        height: 18px;
-        margin-top: calc(49px - 9px);
-    }
+body {
+    background: #F9FFFF;
 }
 
-.round {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    transform: scale(0.33);
-    transform-origin: 50% 50%;
-    top: -116px;
-    left: -116px;
-    opacity: 0;
-    -webkit-animation: reduce 800ms;
+#container {
+    position: fixed;
+    background: #fff;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    width: 100%;
+    height: 100vh;
 }
 
-@-webkit-keyframes reduce {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0.5;
-        transform: scale(0.33);
-    }
-}
-
-.round.left {
-    border: solid 15px red;
-}
-
-.round.right {
-    border: solid 15px blue;
-}
-
-.round.up {
-    border: solid 15px green;
-}
-
-.round.bottom {
-    border: solid 15px purple;
+.content {
+    width: 960px;
+    left: calc(50% - 480px);
 }
 
 
-#pave {
-
-    .button {
-        margin-top: 20px;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        color: white;
-        text-align: center;
-        border: 0;
-
-        &.left { background: red; }
-        &.right { background: blue; }
-        &.up { background: green; }
-        &.bottom { background: purple; }
-    }
-}
+@import "./_partials/home";
+@import "./_partials/game";

@@ -7,6 +7,22 @@ var indexPageController = {};
  *
  */
 indexPageController.homeAction = function () {
-    Container.add('music', new musicControllerInterface('https://api.soundcloud.com/tracks/195390349/stream?client_id=YOUR_CLIENT_ID'));
-    Container.add('partition', new partitionControllerInterface('resources/partitions/test.json', gameController.startListening));
+    Pages.display('home', $('#container'), function () {
+        setTimeout(function () { $('h1').addClass('active'); }, 500);
+        setTimeout(function () { $('.startingText').addClass('active'); }, 2000);
+
+        $(document).on('keyup', indexPageController.homeKeyUp);
+    });
+};
+
+
+/**
+ *
+ * Lorsque l'utilisateur appuis sur une touche
+ *
+ */
+indexPageController.homeKeyUp = function () {
+    setTimeout(function () { window.location.hash = "/signup"; }, 1000);
+    setTimeout(function () { $('h1').removeClass('active'); }, 500);
+    $('.startingText').removeClass('active');
 };
