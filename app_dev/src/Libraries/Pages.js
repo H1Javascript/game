@@ -22,7 +22,7 @@ Pages.setTemplatePath = function (path) {
  * @param function callback
  *
  */
-Pages.load = function (template, callback) {
+Pages.request = function (template, callback) {
     $.get(this.templatePath +"/"+ template +".hbs", function (content) {
         callback(content);
     });
@@ -34,16 +34,19 @@ Pages.load = function (template, callback) {
  * Recupere la page et l'inclue dans le container
  * @param string page
  * @param object container
+ * @param function callback
  *
  */
-Pages.display = function (page, container) {
-    this.load(page, function (uncompiledContent) {
+Pages.display = function (page, container, callback) {
+    this.request(page, function (uncompiledContent) {
         var View = new ViewInterface(uncompiledContent, Handlebars);
         View.setParam(Pages.params);
         View.compile();
 
         container.html(View.getCompiled());
         Pages.resetParams();
+
+        if (callback) callback();
     });
 };
 
