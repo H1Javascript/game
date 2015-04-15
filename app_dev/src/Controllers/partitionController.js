@@ -4,12 +4,13 @@
  * @param string partitionUrl
  *
  */
-var partitionControllerInterface = function (partitionUrl) {
+var partitionControllerInterface = function (partitionUrl, callback) {
     this.partition = {};
     var that = this;
 
     this.load(partitionUrl, function (partition) {
         that.partition = partition;
+        callback();
     });
 };
 
@@ -31,34 +32,11 @@ partitionControllerInterface.prototype.load = function (partitionUrl, callback) 
 /**
  *
  * Recupere la partition d'un moment donne
- * @param int moment
+ * @param int index
  *
  */
-partitionControllerInterface.prototype.get = function (moment) {
-    return this.partition[moment];
-};
+partitionControllerInterface.prototype.get = function (index) {
+    if (index >= 0) return this.partition[index];
 
-
-/**
- *
- * Verifie l'existance d'une partition pour le moment X
- * @param int moment
- * @param string key
- * @return bool
- *
- */
-partitionControllerInterface.prototype.exists = function (moment, key) {
-    if (!key && !this.partition[moment]) {
-        return false;
-    }
-
-    if (key && !this.partition[moment]) {
-        return false;
-    }
-
-    if (key && this.partition[moment] != key) {
-        return false;
-    }
-
-    return true;
+    return this.partition;
 };

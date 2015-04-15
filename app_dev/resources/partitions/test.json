@@ -1,4 +1,46 @@
-{
-    "3.0": "bottom",
-    "4.0": "left"
-}
+[
+    {
+        "timestamp": 2523,
+        "type": "up"
+    },
+    {
+        "timestamp": 6450,
+        "type": "left"
+    },
+    {
+        "timestamp": 9442,
+        "type": "right"
+    },
+    {
+        "timestamp": 11994,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 15202,
+        "type": "up"
+    },
+    {
+        "timestamp": 18442,
+        "type": "left"
+    },
+    {
+        "timestamp": 20466,
+        "type": "right"
+    },
+    {
+        "timestamp": 22250,
+        "type": "up"
+    },
+    {
+        "timestamp": 24682,
+        "type": "left"
+    },
+    {
+        "timestamp": 27474,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 29834,
+        "type": "right"
+    }
+]

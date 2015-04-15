@@ -25,6 +25,17 @@ musicControllerInterface.prototype.play = function () {
 
 /**
  *
+ * Arrete la musique
+ *
+ */
+musicControllerInterface.prototype.stop = function () {
+    this.musicElement.pause();
+    this.musicElement.currentTime = 0;
+};
+
+
+/**
+ *
  * Recupere le temps actuelle de jeu de la musique (en seconde)
  * @return float
  *
