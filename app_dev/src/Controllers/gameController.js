@@ -117,7 +117,9 @@ gameController.reset = function () {
     clearInterval(gameController.refresh);
     $(document).unbind('keyup');
 
-    gameController.positionIndex = 0;
+    gameController.points = 0;
+    gameController.refresh = 0;
+    gameController.partitionIndex = 0;
     gameController.startTime = 0;
     gameController.alreadyPressed = false;
 };
@@ -144,20 +146,27 @@ gameController.gameEnded = function () {
 gameController.listenKeys = function (event) {
     event.preventDefault();
     var keyCode = event.keyCode;
+    var direction = "";
 
     switch (keyCode) {
         case 71: // G
-            gameController.check("up");
+            direction = "up";
             break;
         case 70: // F
-            gameController.check("left");
+            direction = "left";
             break;
         case 74: // J
-            gameController.check("right");
+            direction = "right";
             break;
         case 72: // H
-            gameController.check("bottom");
+            direction = "bottom";
             break;
+    }
+
+    if (direction != "") {
+        gameController.check(direction);
+        $('#playerKeys .'+ direction).addClass('pressed');
+        setTimeout(function () { $('#playerKeys .pressed').removeClass('pressed'); }, 1000);
     }
 };
 

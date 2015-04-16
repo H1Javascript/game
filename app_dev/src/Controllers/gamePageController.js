@@ -46,5 +46,17 @@ gamePageController.afterEndOfGame = function (points) {
 
     Pages.setParam('points', points);
     Pages.setParam('music', musicsModel.getChosen());
-    Pages.display('end', $('#container'));
+    Pages.display('end', $('#container'), function () {
+        $('#retry').on('click', gamePageController.retry);
+    });
+};
+
+
+/**
+ *
+ * Lorsque l'utilisateur retry
+ *
+ */
+gamePageController.retry = function () {
+    gamePageController.homeAction();
 };
