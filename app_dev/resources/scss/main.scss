@@ -18,6 +18,24 @@ body {
     height: 100vh;
 }
 
+.clear {
+    clear: both;
+}
+
+#loading {
+    font-size: 30px;
+    height: 20px;
+    width: 100px;
+    left: calc(50% - 50px);
+    top: calc(50vh - 10px);
+    position: absolute;
+    color: #000;
+    font-family: "Source sans pro";
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
 .content {
     width: 960px;
     left: calc(50% - 480px);
@@ -27,4 +45,5 @@ body {
 // PARTIALS
 @import "./_partials/home";
 @import "./_partials/signup";
+@import "./_partials/musics";
 @import "./_partials/game";

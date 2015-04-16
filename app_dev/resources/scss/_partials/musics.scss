@@ -1,0 +1,124 @@
+#musics {
+    position: absolute;
+
+    h1 {
+        font-family: "Source sans pro";
+        margin-left: 30px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        font-size: 30px;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.5);
+
+        span {
+            color: rgba(0, 0, 0, 0.84);
+            font-weight: 600;
+        }
+    }
+
+    .userinfos {
+        float: right;
+        width: 180px;
+        height: 40px;
+        margin-top: -10px;
+
+        h3 {
+            width: 100%;
+            height: 24px;
+            padding-top: 3px;
+            padding-left: 5px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.04);
+            color: #000;
+            font-size: 18px;
+            font-family: "Source sans pro";
+            font-weight: 500;
+            text-transform: uppercase;
+
+            .level {
+                float: right;
+                width: 35px;
+                color: #FFF;
+                background: #000;
+                font-size: 18px;
+                font-weight: 100;
+                text-align: right;
+                height: 24px;
+                padding-top: 2px;
+                padding-right: 6px;
+                box-sizing: border-box;
+                margin-top: -2px;
+            }
+        }
+    }
+
+    .points {
+        width: 100%;
+        height: 22px;
+        padding-top: 4px;
+        font-size: 15px;
+        font-family: "Source sans pro";
+        font-weight: 500;
+        margin-top: 2px;
+        background: #000;
+        color: #FFF;
+        text-align: center;
+
+        small {
+            font-size: 11px;
+            margin-left: 2px;
+            font-weight: 100;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+        }
+    }
+
+    #musics-container {
+        float: left;
+        width: calc(940px - 200px);
+
+        .musicitem {
+            float: left;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: calc((740px / 3) - 20px);
+            height: 110px;
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+            -webkit-filter: grayscale(100%);
+            transition-duration: 250ms;
+
+            &:hover {
+                -webkit-filter: grayscale(0%);
+            }
+
+            h3, h4 {
+                position: absolute;
+                width: 90%;
+                left: 5%;
+                height: 15px;
+                text-transform: uppercase;
+                box-sizing: border-box;
+                padding-left: 5px;
+                padding-top: 3px;
+                font-family: "Source sans pro";
+                font-size: 11px;
+                font-weight: 600;
+            }
+
+            h3 {
+                bottom: 15px;
+                background: #000;
+                color: #FFF;
+            }
+
+            h4 {
+                bottom: 0;
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+}

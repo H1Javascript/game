@@ -12,6 +12,8 @@ Container.add('storageOnline', new storageOnlineInterfaceComponent({secret: 'Ns/
 // Listening Routes
 Routing.add('/', indexPageController.homeAction, true);
 Routing.add('/signup', signupPageController.homeAction, true);
+Routing.add('/musics', musicsPageController.homeAction, true);
+Routing.add('/play', gamePageController.homeAction, true);
 
 
 Routing.run();

@@ -28,6 +28,7 @@ indexPageController.homeKeyUp = function () {
     if (!isLogged) {
         url = "/signup";
     } else {
+        isLogged.pull();
         Container.add('user', isLogged);
         url = "/musics";
     }

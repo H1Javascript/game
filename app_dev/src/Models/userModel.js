@@ -75,6 +75,24 @@ userModelInterface.prototype.get =  function (key) {
 
 /**
  *
+ * Recupere depuis le cache
+ * @param key
+ * @return mixed
+ *
+ */
+userModelInterface.prototype.getFromCache = function (key) {
+    var infos = JSON.parse(localStorage.getItem('userinfos'));
+
+    if (!key) {
+        return infos;
+    }
+
+    return infos[key];
+};
+
+
+/**
+ *
  * Ecrit une information
  * @param string key
  * @param mixed value

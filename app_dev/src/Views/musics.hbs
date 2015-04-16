@@ -1,0 +1,19 @@
+<section id="musics" class="content">
+    <h1>Choisissez votre <span>musique</span></h1>
+
+    <div class="userinfos">
+        <h3>{{ user.username }} <span class="level">01</span></h3>
+        <div class="points">{{ user.xp }} <small>pts</small></div>
+    </div>
+
+    <div class="musics" id="musics-container">
+        {{#each musics}}
+            <div class="musicitem" data-play="{{ @key }}" style="background: url('resources/images/musics/{{ @key }}.jpg'); background-size: cover;">
+                <h3>{{ artist }}</h3>
+                <h4>{{ title }}</h4>
+            </div>
+        {{/each}}
+
+        <div class="clear"></div>
+    </div>
+</section>

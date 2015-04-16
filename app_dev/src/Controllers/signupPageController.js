@@ -11,6 +11,7 @@ signupPageController.homeAction = function () {
 
     // Si l'utilisateur est deja connecte
     if (isLogged) {
+        isLogged.pull();
         Container.add('user', isLogged);
         window.location.hash = "/musics";
         return false;
@@ -21,6 +22,12 @@ signupPageController.homeAction = function () {
     });
 };
 
+
+/**
+ *
+ * Lorsque l'utilisateur soumet son pseudo
+ *
+ */
 signupPageController.submitPseudo = function (event) {
     event.preventDefault();
     var username = $('#username').val();
@@ -31,4 +38,6 @@ signupPageController.submitPseudo = function (event) {
     Container.user.set('xp', 0);
     Container.user.set('scores', {});
     Container.user.push();
+
+    window.location.hash = "/musics";
 }

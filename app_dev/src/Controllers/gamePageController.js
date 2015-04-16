@@ -7,9 +7,15 @@ var gamePageController = {};
  *
  */
 gamePageController.homeAction = function () {
+
+    if (!musicsModel.existsChosen()) {
+        window.location.hash = "/musics";
+        return false;
+    }
+
     Pages.display('game', $('#container'), function () {
-        Container.add('music', new musicControllerInterface('https://api.soundcloud.com/tracks/195390349/stream?client_id=YOUR_CLIENT_ID'));
-        Container.add('partition', new partitionControllerInterface('resources/partitions/test.json', function () {
+        Container.add('music', new musicControllerInterface(musicsModel.getChosen().music));
+        Container.add('partition', new partitionControllerInterface(musicsModel.getChosen().partition, function () {
             gamePageController.clickToPlay();
         }));
     });
