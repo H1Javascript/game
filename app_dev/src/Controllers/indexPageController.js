@@ -25,6 +25,8 @@ indexPageController.homeKeyUp = function () {
     var isLogged = sessionModel.isLoggedIn();
     var url = "";
 
+    $(document).unbind('keyup');
+
     if (!isLogged) {
         url = "/signup";
     } else {
