@@ -74,6 +74,17 @@ musicsModel.getChosen = function () {
 
 /**
  *
+ * Recupere l'id de la musique choisie
+ * @return int
+ *
+ */
+musicsModel.getChosenId = function () {
+    return this.chosen;
+};
+
+
+/**
+ *
  * Verifie que le chosen est ok
  * @return boolean
  *
