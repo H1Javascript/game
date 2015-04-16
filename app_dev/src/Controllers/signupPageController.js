@@ -33,11 +33,13 @@ signupPageController.submitPseudo = function (event) {
     var username = $('#username').val();
     var userid = Math.ceil(Math.random() * 100000);
 
+    $('#container').html('<h3 id="loading">Chargement...</h3>');
+
     Container.add('user', new userModelInterface(Container.storageOnline, userid));
     Container.user.set('username', username);
     Container.user.set('xp', 0);
     Container.user.set('scores', {});
-    Container.user.push();
-
-    window.location.hash = "/musics";
+    Container.user.push(function () {
+        window.location.hash = "/musics";
+    });
 }
