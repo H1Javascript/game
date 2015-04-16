@@ -3,7 +3,7 @@ var gamePageController = {};
 
 /**
  *
- * Demarre le jeu
+ * Affiche le jeu
  *
  */
 gamePageController.homeAction = function () {
@@ -25,6 +25,7 @@ gamePageController.homeAction = function () {
 
 /**
  *
+ * Demarre le jeu
  *
  */
 gamePageController.clickToPlay = function () {
@@ -33,7 +34,17 @@ gamePageController.clickToPlay = function () {
 };
 
 
+/**
+ *
+ * Lorsque le jeu est fini
+ * @param int points
+ *
+ */
 gamePageController.afterEndOfGame = function (points) {
+    Container.user.set('xp', Container.user.get('xp') + points);
+    Container.user.push();
 
-
+    Pages.setParam('points', points);
+    Pages.setParam('music', musicsModel.getChosen());
+    Pages.display('end', $('#container'));
 };

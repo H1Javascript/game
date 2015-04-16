@@ -36,9 +36,10 @@ userModelInterface.prototype.pull =  function () {
 /**
  *
  * Envoie les donnees temporaires sur le S3
+ * @param callback
  *
  */
-userModelInterface.prototype.push =  function () {
+userModelInterface.prototype.push =  function (callback) {
     var dataFormated = JSON.stringify(this.datas);
 
     // On stock en ligne
@@ -50,6 +51,8 @@ userModelInterface.prototype.push =  function () {
             console.log(error);
             return false;
         }
+
+        if (callback) callback();
     });
 
     // On stock hors ligne

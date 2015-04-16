@@ -169,3 +169,63 @@
         }
     }
 }
+
+
+#result {
+    position: absolute;
+    height: 150px;
+    width: 500px;
+    left: calc(50% - 250px);
+    top: calc(50vh - 75px);
+
+    h1 {
+        font-family: "Source sans pro";
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .score {
+        font-size: 80px;
+        color: #65aae3;
+        font-family: "Source sans pro";
+
+        small {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    }
+
+    .buttons {
+        float: right;
+        width: 150px;
+
+        a {
+            display: block;
+            text-decoration: none;
+            width: 150px;
+            height: 40px;
+            color: #fff;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            padding-top: 10px;
+            font-family: "Source sans pro";
+
+            &.retry {
+                background: #FDAF65;
+            }
+
+            &.continue {
+                background: #08B933;
+            }
+
+            &.share {
+                background: #666666;
+            }
+        }
+    }
+}

@@ -119,7 +119,7 @@ gameController.reset = function () {
 
     gameController.positionIndex = 0;
     gameController.startTime = 0;
-    alreadyPressed = false;
+    gameController.alreadyPressed = false;
 };
 
 
@@ -129,9 +129,10 @@ gameController.reset = function () {
  *
  */
 gameController.gameEnded = function () {
-    Container.music.stop();
+    var points = gameController.getPoints();
     gameController.reset();
-    gameController.endCallback();
+    gameController.endCallback(points);
+    Container.music.stop();
 };
 
 
@@ -141,6 +142,7 @@ gameController.gameEnded = function () {
  *
  */
 gameController.listenKeys = function (event) {
+    event.preventDefault();
     var keyCode = event.keyCode;
 
     switch (keyCode) {
