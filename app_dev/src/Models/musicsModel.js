@@ -3,8 +3,8 @@ var musicsModel = {
         "1": {
             artist: "U2",
             title: "Beautiful day",
-            music: "https://api.soundcloud.com/tracks/195390349/stream?client_id=YOUR_CLIENT_ID",
-            partition: "resources/partitions/test.json"
+            music: "http://srv60.clipconverter.cc/download/4pmaaWpg5KWmqW9o4pSXanJimWpqbGm0qc%2FMqHyf1qiZpa2d2A%3D%3D/U2%20-%20Beautiful%20Day.mp3",
+            partition: "resources/partitions/u2.json"
         },
         "2": {
             artist: "Taylor Swift",
