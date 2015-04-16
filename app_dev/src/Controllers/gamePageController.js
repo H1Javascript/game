@@ -13,6 +13,7 @@ gamePageController.homeAction = function () {
         return false;
     }
 
+    Pages.setParam('music', musicsModel.getChosen());
     Pages.display('game', $('#container'), function () {
         Container.add('music', new musicControllerInterface(musicsModel.getChosen().music));
         Container.add('partition', new partitionControllerInterface(musicsModel.getChosen().partition, function () {
@@ -32,7 +33,7 @@ gamePageController.clickToPlay = function () {
 };
 
 
-gamePageController.afterEndOfGame = function () {
-    // Callback de la fin du jeu
+gamePageController.afterEndOfGame = function (points) {
+
 
 };

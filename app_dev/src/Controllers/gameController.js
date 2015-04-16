@@ -144,16 +144,16 @@ gameController.listenKeys = function (event) {
     var keyCode = event.keyCode;
 
     switch (keyCode) {
-        case 38:
+        case 71: // G
             gameController.check("up");
             break;
-        case 37:
+        case 70: // F
             gameController.check("left");
             break;
-        case 39:
+        case 74: // J
             gameController.check("right");
             break;
-        case 40:
+        case 72: // H
             gameController.check("bottom");
             break;
     }
