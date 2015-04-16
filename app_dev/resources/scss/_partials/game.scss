@@ -178,6 +178,40 @@
     left: calc(50% - 250px);
     top: calc(50vh - 75px);
 
+    &.defis {
+        top: calc(50vh - 120px);
+
+        .score-container {
+            width: 50%;
+            float: left;
+            text-align: center;
+
+            .score {
+
+                small {
+                    color: rgba(0, 0, 0, 0.3);
+                    display: block;
+                }
+
+                b {
+                    color: rgba(0, 0, 0, 0.54);
+                }
+            }
+        }
+
+        .buttons {
+            width: 100%;
+            margin-top: 60px;
+            display: flex;
+
+            a {
+                flex: 1;
+                margin-left: 5px;
+                margin-right: 5;
+            }
+        }
+    }
+
     h1 {
         font-family: "Source sans pro";
         font-size: 30px;

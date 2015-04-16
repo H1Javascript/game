@@ -1,8 +1,12 @@
-var gamePageController = {};
+var gamePageController = {
+    defis: false,
+    pointsToReach: 0
+};
 
 
 /**
  *
+ * /play
  * Affiche le jeu
  *
  */
@@ -25,6 +29,33 @@ gamePageController.homeAction = function () {
 
 /**
  *
+ * /defis/{music}:{score}
+ * Defis
+ *
+ */
+gamePageController.defisAction = function (params) {
+    var music = params[0];
+    var score = params[1];
+    var isLogged = sessionModel.isLoggedIn();
+
+    if (!isLogged) {
+        window.location.hash = "/";
+        return false;
+    }
+
+    isLogged.pull();
+    Container.add('user', isLogged);
+
+    gamePageController.defis = true;
+    gamePageController.pointsToReach = score;
+    musicsModel.setChosen(music);
+
+    gamePageController.homeAction();
+};
+
+
+/**
+ *
  * Demarre le jeu
  *
  */
@@ -41,15 +72,35 @@ gamePageController.clickToPlay = function () {
  *
  */
 gamePageController.afterEndOfGame = function (points) {
+    var endPage = "end";
+
     Container.user.set('xp', Container.user.get('xp') + points);
     Container.user.push();
 
+    if (gamePageController.defis) {
+        Pages.setParam('pointsToReach', gamePageController.pointsToReach);
+        endPage = "end_defis";
+    }
+
     Pages.setParam('points', points);
     Pages.setParam('music', musicsModel.getChosen());
-    Pages.display('end', $('#container'), function () {
+    Pages.display(endPage, $('#container'), function () {
         $('#retry').on('click', gamePageController.retry);
         $('#share').on('click', gamePageController.share);
+        $('#continue').on('click', gamePageController.continue);
     });
+};
+
+
+/**
+ *
+ * Desecoute les evenements
+ *
+ */
+gamePageController.unbind = function () {
+    $('#retry').unbind('click');
+    $('#continue').unbind('click');
+    $('#share').unbind('click');
 };
 
 
@@ -59,10 +110,25 @@ gamePageController.afterEndOfGame = function (points) {
  *
  */
 gamePageController.retry = function () {
-    $('#retry').unbind('click');
-    $('#share').unbind('click');
-
+    gamePageController.unbind();
     gamePageController.homeAction();
+};
+
+
+/**
+ *
+ * Lorsque l'utilisateur continue
+ *
+ */
+gamePageController.continue = function () {
+    if (gamePageController.defis) {
+        gamePageController.defis = false;
+        gamePageController.pointsToReach = 0;
+    }
+
+    gamePageController.unbind();
+
+    window.location.hash = "/musics";
 };
 
 
@@ -75,7 +141,7 @@ gamePageController.share = function () {
     var points = $(this).attr('data-points');
     var music = musicsModel.getChosen();
 
-    var defisUrl =  "http://"+ window.location.host +"#/defis/"+ musicsModel.getChosenId() +"/"+ Container.user.get('userid');
+    var defisUrl =  "http://"+ window.location.host +"#/defis/"+ musicsModel.getChosenId() +":"+ Container.user.get('userid') +":"+ points;
     var message = "Essais de battre "+ points +" points sur '"+ music.title +"' de "+ music.artist;
     // Debug
     //defisUrl = "http://facebook.com";

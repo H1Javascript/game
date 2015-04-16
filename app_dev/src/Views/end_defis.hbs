@@ -1,0 +1,24 @@
+<section id="result" class="content defis">
+
+    <div class="score-container">
+        <h1>TON SCORE</h1>
+
+        <div class="score">
+            {{ points }} <small>pts</small>
+        </div>
+    </div>
+
+    <div class="score-container">
+        <h1>SCORE A BATTRE</h1>
+        <div class="score" >
+            <b>{{ pointsToReach }}</b> <small>pts</small>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a id="continue" class="continue">Continuer</a>
+        <a id="retry" class="retry">Retenter</a>
+        <a id="share" data-music="{{ music.title }}" data-points="{{ points }}" class="share">Partager</a>
+    </div>
+
+</section>
