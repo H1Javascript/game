@@ -5,6 +5,10 @@ body {
     background: #F9FFFF;
 }
 
+.center {
+    text-align: center;
+}
+
 #container {
     position: fixed;
     background: #fff;
@@ -20,5 +24,7 @@ body {
 }
 
 
+// PARTIALS
 @import "./_partials/home";
+@import "./_partials/signup";
 @import "./_partials/game";

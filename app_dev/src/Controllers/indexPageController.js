@@ -22,7 +22,17 @@ indexPageController.homeAction = function () {
  *
  */
 indexPageController.homeKeyUp = function () {
-    setTimeout(function () { window.location.hash = "/signup"; }, 1000);
+    var isLogged = sessionModel.isLoggedIn();
+    var url = "";
+
+    if (!isLogged) {
+        url = "/signup";
+    } else {
+        Container.add('user', isLogged);
+        url = "/musics";
+    }
+
+    setTimeout(function () { window.location.hash = url; }, 1000);
     setTimeout(function () { $('h1').removeClass('active'); }, 500);
     $('.startingText').removeClass('active');
 };

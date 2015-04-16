@@ -6,7 +6,9 @@
  *
  */
 var userModelInterface = function (aws, userID) {
-    this.datas = {};
+    this.datas = {
+        userid: userID
+    };
     this.aws = aws;
     this.userID = userID;
 };
@@ -39,6 +41,7 @@ userModelInterface.prototype.pull =  function () {
 userModelInterface.prototype.push =  function () {
     var dataFormated = JSON.stringify(this.datas);
 
+    // On stock en ligne
     this.aws.write({
         fileName: this.userID +'.json',
         content: dataFormated
@@ -48,6 +51,9 @@ userModelInterface.prototype.push =  function () {
             return false;
         }
     });
+
+    // On stock hors ligne
+    localStorage.setItem('userinfos', dataFormated);
 };
 
 
