@@ -222,11 +222,15 @@ gameController.displayBounds = function () {
 
     var partition = Container.partition.get(gameController.partitionIndex);
     var difference = Math.round((partition.timestamp - gameController.getTimeOffset()) / 100);
-    var partitionElementLength = $('[data-index="'+ gameController.partitionIndex +'"]').length;
 
-    // On affiche le rond 9s avant si l'element n'est pas deja affiche
-    if (difference == 9 && partitionElementLength == 0) {
-        gameController.container.append('<div class="round '+ Container.partition.get(gameController.partitionIndex).type +'" data-index="'+ gameController.partitionIndex +'"></div>');
+    // On affiche les ronds 9s avant si l'element n'est pas deja affiche
+    for (var note = gameController.partitionIndex; note < Container.partition.get().length; note++) {
+        var diff = Math.round((Container.partition.get(note).timestamp - gameController.getTimeOffset()) / 100);
+        var partitionElementLength = $('[data-index="'+ note +'"]').length;
+
+        if (diff <= 9 && partitionElementLength == 0) {
+            gameController.container.append('<div class="round '+ Container.partition.get(note).type +'" data-index="'+ note +'"></div>');
+        }
     }
 
     // On passe au suivant 4s apres
