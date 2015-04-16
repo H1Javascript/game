@@ -14,6 +14,7 @@ Routing.add('/', indexPageController.homeAction, true);
 Routing.add('/signup', signupPageController.homeAction, true);
 Routing.add('/musics', musicsPageController.homeAction, true);
 Routing.add('/play', gamePageController.homeAction, true);
+Routing.add('/defis/([0-9]+):([0-9]+)', gamePageController.defisAction, true); // musique ; score
 
 
 Routing.run();
