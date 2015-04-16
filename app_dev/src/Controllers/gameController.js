@@ -230,7 +230,7 @@ gameController.displayBounds = function () {
     }
 
     // On passe au suivant 4s apres
-    if (difference < -4) {
+    if (difference < -1) {
         gameController.alreadyPressed = false;
         gameController.partitionIndex++;
     }
