@@ -25,6 +25,16 @@ musicControllerInterface.prototype.play = function () {
 
 /**
  *
+ * Recupere la duree
+ *
+ */
+musicControllerInterface.prototype.getDuration = function () {
+    this.musicElement.duration;
+};
+
+
+/**
+ *
  * Arrete la musique
  *
  */

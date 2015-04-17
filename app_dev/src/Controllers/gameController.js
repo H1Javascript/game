@@ -173,6 +173,33 @@ gameController.listenKeys = function (event) {
 
 /**
  *
+ * Met a jour le timer
+ *
+ */
+gameController.updateTimer = function () {
+    var currentTime = parseInt(Container.music.getTime());
+    currentTimeMinute = Math.floor(currentTime / 60);
+    currentTimeSeconds = currentTime - (currentTimeMinute * 60);
+
+    var totalTime = Math.floor(Container.music.musicElement.duration);
+    var totalTimeMinute = Math.floor(totalTime / 60);
+    var totalTimeSeconds = totalTime - (totalTimeMinute * 60);
+
+    totalTimeMinute = (totalTimeMinute > 9) ? totalTimeMinute : "0"+ totalTimeMinute;
+    totalTimeSeconds = (totalTimeSeconds > 9) ? totalTimeSeconds : "0"+ totalTimeSeconds;
+    totalTime = totalTimeMinute +":"+ totalTimeSeconds;
+
+    currentTimeMinute = (currentTimeMinute > 9) ? currenTimeMinute : "0"+ currentTimeMinute;
+    currentTimeSeconds = (currentTimeSeconds > 9) ? currentTimeSeconds : "0"+ currentTimeSeconds;
+    currentTime = currentTimeMinute +":"+ currentTimeSeconds;
+
+    $('#timer .full').html(totalTime);
+    $('#timer .current').html(currentTime);
+};
+
+
+/**
+ *
  * Verifie la touche appuyee
  * @param string direction
  *
@@ -230,6 +257,9 @@ gameController.displayBounds = function () {
         gameController.gameEnded();
         return false;
     }
+
+    // Met a jour le timer
+    gameController.updateTimer();
 
     var partition = Container.partition.get(gameController.partitionIndex);
     var difference = Math.round((partition.timestamp - gameController.getTimeOffset()) / 100);
