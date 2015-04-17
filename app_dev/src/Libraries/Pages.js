@@ -23,7 +23,7 @@ Pages.setTemplatePath = function (path) {
  *
  */
 Pages.request = function (template, callback) {
-    $.get(this.templatePath +"/"+ template +".hbs", function (content) {
+    $.get(this.templatePath +"/"+ template +".html", function (content) {
         callback(content);
     });
 };
