@@ -20,7 +20,7 @@ gamePageController.homeAction = function () {
     Pages.setParam('music', musicsModel.getChosen());
     Pages.setParam('defis', gamePageController.defis);
     Pages.setParam('scoreToReach', gamePageController.pointsToReach);
-    
+
     Pages.display('game', $('#container'), function () {
         Container.add('music', new musicControllerInterface(musicsModel.getChosen().music));
         Container.add('partition', new partitionControllerInterface(musicsModel.getChosen().partition, function () {
@@ -144,7 +144,7 @@ gamePageController.share = function () {
     var points = $(this).attr('data-points');
     var music = musicsModel.getChosen();
 
-    var defisUrl =  "http://"+ window.location.host +"#/defis/"+ musicsModel.getChosenId() +":"+ Container.user.get('userid') +":"+ points;
+    var defisUrl =  encodeURIComponent("http://rhythmnastic.herokuapp.com#/defis/"+ musicsModel.getChosenId() +":"+ points);
     var message = "Essais de battre "+ points +" points sur '"+ music.title +"' de "+ music.artist;
     // Debug
     //defisUrl = "http://facebook.com";
@@ -156,8 +156,8 @@ gamePageController.share = function () {
     facebookUrl += "link="+ defisUrl +"&";
     facebookUrl += "name=Rhythmnastic&";
     facebookUrl += "description=Move your fingers&";
-    //facebookUrl += "picture=&";
     facebookUrl += "caption="+ message +"&";
+    facebookUrl += "picture=http://rhythmnastic.herokuapp.com/resources/images/musics/"+ musicsModel.getChosenId() +".jpg&";
     facebookUrl += "redirect_uri=http://facebook.com";
 
     window.open(facebookUrl, 'Partage facebook', 'width=600, height=300');
