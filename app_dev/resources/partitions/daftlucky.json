@@ -1,0 +1,522 @@
+[
+    {
+        "timestamp": 2401,
+        "type": "up"
+    },
+    {
+        "timestamp": 4416,
+        "type": "up"
+    },
+    {
+        "timestamp": 6440,
+        "type": "up"
+    },
+    {
+        "timestamp": 8551,
+        "type": "right"
+    },
+    {
+        "timestamp": 10552,
+        "type": "left"
+    },
+    {
+        "timestamp": 12608,
+        "type": "right"
+    },
+    {
+        "timestamp": 14743,
+        "type": "left"
+    },
+    {
+        "timestamp": 16671,
+        "type": "right"
+    },
+    {
+        "timestamp": 18839,
+        "type": "left"
+    },
+    {
+        "timestamp": 20895,
+        "type": "right"
+    },
+    {
+        "timestamp": 23039,
+        "type": "left"
+    },
+    {
+        "timestamp": 24983,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 26975,
+        "type": "right"
+    },
+    {
+        "timestamp": 29031,
+        "type": "up"
+    },
+    {
+        "timestamp": 31246,
+        "type": "left"
+    },
+    {
+        "timestamp": 33390,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 34702,
+        "type": "right"
+    },
+    {
+        "timestamp": 36637,
+        "type": "up"
+    },
+    {
+        "timestamp": 38598,
+        "type": "left"
+    },
+    {
+        "timestamp": 39630,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 41621,
+        "type": "right"
+    },
+    {
+        "timestamp": 43445,
+        "type": "up"
+    },
+    {
+        "timestamp": 45517,
+        "type": "left"
+    },
+    {
+        "timestamp": 47349,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 49853,
+        "type": "right"
+    },
+    {
+        "timestamp": 51628,
+        "type": "up"
+    },
+    {
+        "timestamp": 53972,
+        "type": "left"
+    },
+    {
+        "timestamp": 56116,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 58188,
+        "type": "right"
+    },
+    {
+        "timestamp": 60476,
+        "type": "up"
+    },
+    {
+        "timestamp": 62524,
+        "type": "up"
+    },
+    {
+        "timestamp": 64756,
+        "type": "up"
+    },
+    {
+        "timestamp": 66452,
+        "type": "up"
+    },
+    {
+        "timestamp": 68547,
+        "type": "up"
+    },
+    {
+        "timestamp": 70555,
+        "type": "up"
+    },
+    {
+        "timestamp": 72675,
+        "type": "up"
+    },
+    {
+        "timestamp": 74723,
+        "type": "up"
+    },
+    {
+        "timestamp": 76835,
+        "type": "left"
+    },
+    {
+        "timestamp": 78874,
+        "type": "right"
+    },
+    {
+        "timestamp": 80915,
+        "type": "right"
+    },
+    {
+        "timestamp": 82995,
+        "type": "up"
+    },
+    {
+        "timestamp": 85050,
+        "type": "left"
+    },
+    {
+        "timestamp": 87098,
+        "type": "right"
+    },
+    {
+        "timestamp": 89074,
+        "type": "left"
+    },
+    {
+        "timestamp": 91378,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 93289,
+        "type": "right"
+    },
+    {
+        "timestamp": 95354,
+        "type": "up"
+    },
+    {
+        "timestamp": 97433,
+        "type": "left"
+    },
+    {
+        "timestamp": 99514,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 101473,
+        "type": "right"
+    },
+    {
+        "timestamp": 103337,
+        "type": "up"
+    },
+    {
+        "timestamp": 105217,
+        "type": "left"
+    },
+    {
+        "timestamp": 107768,
+        "type": "left"
+    },
+    {
+        "timestamp": 109664,
+        "type": "right"
+    },
+    {
+        "timestamp": 111600,
+        "type": "left"
+    },
+    {
+        "timestamp": 113712,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 116088,
+        "type": "up"
+    },
+    {
+        "timestamp": 118232,
+        "type": "up"
+    },
+    {
+        "timestamp": 120263,
+        "type": "up"
+    },
+    {
+        "timestamp": 122311,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 124359,
+        "type": "up"
+    },
+    {
+        "timestamp": 126367,
+        "type": "left"
+    },
+    {
+        "timestamp": 128431,
+        "type": "right"
+    },
+    {
+        "timestamp": 130487,
+        "type": "left"
+    },
+    {
+        "timestamp": 132558,
+        "type": "right"
+    },
+    {
+        "timestamp": 134774,
+        "type": "right"
+    },
+    {
+        "timestamp": 136798,
+        "type": "right"
+    },
+    {
+        "timestamp": 139094,
+        "type": "right"
+    },
+    {
+        "timestamp": 140894,
+        "type": "up"
+    },
+    {
+        "timestamp": 142598,
+        "type": "left"
+    },
+    {
+        "timestamp": 144542,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 146438,
+        "type": "right"
+    },
+    {
+        "timestamp": 148333,
+        "type": "up"
+    },
+    {
+        "timestamp": 149237,
+        "type": "left"
+    },
+    {
+        "timestamp": 150669,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 151829,
+        "type": "right"
+    },
+    {
+        "timestamp": 152861,
+        "type": "up"
+    },
+    {
+        "timestamp": 153845,
+        "type": "left"
+    },
+    {
+        "timestamp": 154917,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 156037,
+        "type": "right"
+    },
+    {
+        "timestamp": 157332,
+        "type": "up"
+    },
+    {
+        "timestamp": 158901,
+        "type": "right"
+    },
+    {
+        "timestamp": 160260,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 161013,
+        "type": "left"
+    },
+    {
+        "timestamp": 162196,
+        "type": "up"
+    },
+    {
+        "timestamp": 163132,
+        "type": "right"
+    },
+    {
+        "timestamp": 164068,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 165236,
+        "type": "left"
+    },
+    {
+        "timestamp": 166252,
+        "type": "up"
+    },
+    {
+        "timestamp": 167252,
+        "type": "right"
+    },
+    {
+        "timestamp": 168292,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 169364,
+        "type": "left"
+    },
+    {
+        "timestamp": 170492,
+        "type": "up"
+    },
+    {
+        "timestamp": 171404,
+        "type": "right"
+    },
+    {
+        "timestamp": 172428,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 173468,
+        "type": "up"
+    },
+    {
+        "timestamp": 174133,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 175275,
+        "type": "up"
+    },
+    {
+        "timestamp": 177267,
+        "type": "right"
+    },
+    {
+        "timestamp": 179004,
+        "type": "left"
+    },
+    {
+        "timestamp": 180163,
+        "type": "right"
+    },
+    {
+        "timestamp": 182219,
+        "type": "left"
+    },
+    {
+        "timestamp": 184315,
+        "type": "right"
+    },
+    {
+        "timestamp": 186115,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 188160,
+        "type": "up"
+    },
+    {
+        "timestamp": 190546,
+        "type": "up"
+    },
+    {
+        "timestamp": 192586,
+        "type": "right"
+    },
+    {
+        "timestamp": 194698,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 196786,
+        "type": "left"
+    },
+    {
+        "timestamp": 198786,
+        "type": "up"
+    },
+    {
+        "timestamp": 200897,
+        "type": "right"
+    },
+    {
+        "timestamp": 202889,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 204953,
+        "type": "left"
+    },
+    {
+        "timestamp": 207138,
+        "type": "up"
+    },
+    {
+        "timestamp": 209201,
+        "type": "right"
+    },
+    {
+        "timestamp": 211217,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 213297,
+        "type": "left"
+    },
+    {
+        "timestamp": 215360,
+        "type": "up"
+    },
+    {
+        "timestamp": 216904,
+        "type": "right"
+    },
+    {
+        "timestamp": 218993,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 221024,
+        "type": "left"
+    },
+    {
+        "timestamp": 223608,
+        "type": "up"
+    },
+    {
+        "timestamp": 225520,
+        "type": "up"
+    },
+    {
+        "timestamp": 227943,
+        "type": "bottom"
+    },
+    {
+        "timestamp": 229471,
+        "type": "up"
+    },
+    {
+        "timestamp": 231879,
+        "type": "left"
+    },
+    {
+        "timestamp": 233711,
+        "type": "left"
+    },
+    {
+        "timestamp": 236071,
+        "type": "up"
+    },
+    {
+        "timestamp": 237775,
+        "type": "right"
+    },
+    {
+        "timestamp": 240167,
+        "type": "bottom"
+    }
+]

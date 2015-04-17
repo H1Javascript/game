@@ -3,38 +3,56 @@ var musicsModel = {
         "1": {
             artist: "U2",
             title: "Beautiful day",
-            music: "http://srv60.clipconverter.cc/download/4pmaaWpg5KWmqW9o4pSXanJimWpqbGm0qc%2FMqHyf1qiZpa2d2A%3D%3D/U2%20-%20Beautiful%20Day.mp3",
-            partition: "resources/partitions/u2.json"
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/U2_Beautiful_Day.mp3",
+            partition: "resources/partitions/u2beautiful.json"
         },
         "2": {
             artist: "Taylor Swift",
             title: "Blank space",
-            music: "",
-            partition: "resources/partitions/test.json"
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Taylor_Swift_Blank_Space.mp3",
+            partition: "resources/partitions/swiftblank.json"
         },
         "3": {
             artist: "Daft Punk",
             title: "Get lucky",
-            music: "",
-            partition: "resources/partitions/test.json"
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Daft_Punk_Get_Lucky.mp3",
+            partition: "resources/partitions/daftlucky.json"
         },
         "4": {
-            artist: "Kayplex",
+            artist: "Klayplex",
             title: "Lights",
-            music: "",
-            partition: "resources/partitions/test.json"
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Klaypex_Lights.mp3",
+            partition: "resources/partitions/klayplexlights.json"
         },
         "5": {
             artist: "Misterwives",
             title: "Our own house",
-            music: "",
-            partition: "resources/partitions/test.json"
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/MisterWives+_Our_Own_House.mp3",
+            partition: "resources/partitions/misterwivesour.json"
         },
         "6": {
             artist: "Gesafelstein",
             title: "Pursuit",
-            music: "",
-            partition: "resources/partitions/test.json"
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Gesaffelstein_Pursuit.mp3",
+            partition: "resources/partitions/gesapursuit.json"
+        },
+        "7": {
+            artist: "Wiz Kahlifa ft. Charlie Puth",
+            title: "See you again",
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Wiz_Khalifa_See_You_Again.mp3",
+            partition: "resources/partitions/wizseeyou.json"
+        },
+        "8": {
+            artist: "Maroon 5",
+            title: "Sugar",
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Maroon_Sugar.mp3",
+            partition: "resources/partitions/maroonsugar.json"
+        },
+        "9": {
+            artist: "Bruno Mars",
+            title: "Uptown Funk",
+            music: "https://s3-eu-west-1.amazonaws.com/assets.repoleak.com/HETIC/Rhythmnastic/Musics/Bruno_Mars_Uptown_Funk.mp3",
+            partition: "resources/partitions/brunouptown.json"
         },
     },
     chosen: 0
