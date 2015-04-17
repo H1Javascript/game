@@ -155,8 +155,8 @@ gamePageController.share = function () {
     facebookUrl += "display=popup&";
     facebookUrl += "link="+ defisUrl +"&";
     facebookUrl += "name=Rhythmnastic&";
-    facebookUrl += "description=Move your fingers&";
-    facebookUrl += "caption="+ message +"&";
+    facebookUrl += "caption=Move your fingers&";
+    facebookUrl += "message="+ message +"&";
     facebookUrl += "picture=http://rhythmnastic.herokuapp.com/resources/images/musics/"+ musicsModel.getChosenId() +".jpg&";
     facebookUrl += "redirect_uri=http://facebook.com";
 
