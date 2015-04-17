@@ -5,6 +5,13 @@ var Container = new ContainerInterface();
 Pages.setTemplatePath('libraries/views');
 
 
+// Quand on est sur mobile
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    Pages.display('mobile', $('#container'));
+    return false;
+}
+
+
 // Container
 Container.add('storageOnline', new storageOnlineInterfaceComponent({secret: 'Ns/cn0NTQkYdRLJfYT3pFd+eATJt+6RNzw3HVuY5', key: 'AKIAIS5UWNY6W6BZVIAA'}, 'assets.repoleak.com', 'HETIC/Rhythmnastic/Database/'));
 

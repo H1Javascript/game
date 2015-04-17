@@ -49,6 +49,34 @@ body {
 }
 
 
+#mobile {
+    width: 100%;
+    height: 100vh;
+    background: #eee;
+    font-family: 'Source sans pro';
+
+    .container {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        left: 0;
+        right: 0;
+        top: calc(50vh - 50px);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .center {
+        color: rgba(0,0,0,0.3);
+        text-align: center
+    }
+}
+
+
 // PARTIALS
 @import "./_partials/home";
 @import "./_partials/signup";
