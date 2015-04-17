@@ -163,6 +163,19 @@
         }
     }
 
+    #combo {
+        position: absolute;
+        right: 30px;
+        top: 80px;
+        font-size: 30px;
+        color: #C607C6;
+        font-family: "Artsy_Brush";
+
+        span {
+            margin-right: 5px;
+        }
+    }
+
     .points {
         margin-top: 25px;
         float: right;

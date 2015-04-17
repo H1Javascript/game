@@ -5,6 +5,7 @@ var gameController = {
     startTime: 0,
     alreadyPressed: false,
     points: 0,
+    combo: 1,
     endCallback: function () {},
 
     // Elements jQuery
@@ -119,6 +120,7 @@ gameController.reset = function () {
 
     gameController.points = 0;
     gameController.refresh = 0;
+    gameController.combo = 1;
     gameController.partitionIndex = 0;
     gameController.startTime = 0;
     gameController.alreadyPressed = false;
@@ -219,8 +221,32 @@ gameController.check = function (direction) {
 
     // On ajoute les points
     if (points > 0) {
-        gameController.addPoints(points * 100);
+        gameController.addPoints((points * 100) * gameController.combo);
         gameController.pointsContainer.html(gameController.getPoints());
+
+        // On update le multiplicateur
+        if (gameController.combo < 25) {
+            switch (gameController.combo) {
+                case 1:
+                    gameController.combo++;
+                    break;
+                case 2:
+                    gameController.combo = 5;
+                    break;
+                default:
+                    gameController.combo = gameController.combo + 5;
+                    break;
+            }
+        }
+    } else {
+        gameController.combo = 1;
+    }
+
+    // On affiche le multiplicateur
+    if (gameController.combo > 1) {
+        $('#combo').html('<span>x</span>'+ gameController.combo);
+    } else {
+        $('#combo').html('');
     }
 
     var message = "";
@@ -237,7 +263,6 @@ gameController.check = function (direction) {
         state = "notbad";
     } else {
         state = "fail";
-
     }
 
     gameController.setState(message, state);

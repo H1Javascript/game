@@ -1,5 +1,12 @@
 @import "compass";
+
+@font-face {
+    font-family: "Artsy_Brush";
+    src: url('../resources/fonts/artsy_brush.otf');
+}
+
 @import "compass/reset";
+
 
 body {
     background: #F9FFFF;

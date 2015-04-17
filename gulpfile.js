@@ -50,6 +50,20 @@ gulp.task('cleanViews', function () {
 
 
 // Move files to prod without changing them
+gulp.task('moveFont', ['cleanFont'], function () {
+  return gulp.src(dev +"/resources/fonts/**/*")
+    .pipe(gulp.dest(prod +'/resources/fonts'));
+});
+
+
+// Clean directories
+gulp.task('cleanFont', function () {
+  return gulp.src(prod +"/resources/fonts")
+    .pipe(clean());
+});
+
+
+// Move files to prod without changing them
 gulp.task('moveImages', ['cleanImages'], function () {
   return gulp.src(dev +"/resources/images/**/*")
     .pipe(gulp.dest(prod +'/resources/images'));
@@ -78,4 +92,4 @@ gulp.task('cleanPartitions', function () {
 
 
 // Production task
-gulp.task('prod', ['compass', 'compile', 'moveViews', 'moveImages', 'movePartitions'], function () {});
+gulp.task('prod', ['compass', 'compile', 'moveViews', 'moveImages', 'movePartitions', 'moveFont'], function () {});
