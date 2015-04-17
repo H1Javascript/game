@@ -18,6 +18,9 @@ gamePageController.homeAction = function () {
     }
 
     Pages.setParam('music', musicsModel.getChosen());
+    Pages.setParam('defis', gamePageController.defis);
+    Pages.setParam('scoreToReach', gamePageController.pointsToReach);
+    
     Pages.display('game', $('#container'), function () {
         Container.add('music', new musicControllerInterface(musicsModel.getChosen().music));
         Container.add('partition', new partitionControllerInterface(musicsModel.getChosen().partition, function () {

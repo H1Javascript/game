@@ -6,6 +6,12 @@
 
     <h1 class="points">00<span id="points"></span> <small>pts</small></h1>
 
+    {{#if defis}}
+    <div class="defiscontainer">
+        score a battre: <b>{{ scoreToReach }}</b> <small>pts</small>
+    </div>
+    {{/if}}
+
     <div id="playerIndicator">
         <h1></h1>
     </div>

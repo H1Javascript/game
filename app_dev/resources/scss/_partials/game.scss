@@ -168,6 +168,29 @@
             margin-left: 2px;
         }
     }
+
+    .defiscontainer {
+        float: right;
+        color: white;
+        margin-top: 25px;
+        margin-right: 10px;
+        font-size: 13px;
+        padding: 5px 10px 5px 10px;
+        background: #000;
+        text-transform: uppercase;
+        font-family: 'Source sans pro';
+
+        b {
+            margin-left: 6px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        small {
+            font-family: 11px;
+            font-weight: 100;
+        }
+    }
 }
 
 
