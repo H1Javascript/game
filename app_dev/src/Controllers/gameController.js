@@ -95,15 +95,17 @@ gameController.getPoints = function () {
  *
  */
 gameController.startListening = function () {
-    Container.music.play();
+    Container.music.onLoaded(function () {
+        Container.music.play();
 
-    gameController.startTime = new Date().getTime();
-    gameController.setParams(
-        $('#playerIndicator'),
-        $('#playerKeys').children('button'),
-        $('#points')
-    );
-    gameController.refresh = setInterval(gameController.displayBounds, (1000 / 10));
+        gameController.startTime = new Date().getTime();
+        gameController.setParams(
+            $('#playerIndicator'),
+            $('#playerKeys').children('button'),
+            $('#points')
+        );
+        gameController.refresh = setInterval(gameController.displayBounds, (1000 / 10));
+    });
 
     $(document).on('keyup', gameController.listenKeys);
 };

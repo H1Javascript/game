@@ -15,6 +15,18 @@ var musicControllerInterface = function (music) {
 
 /**
  *
+ * Lorsque la musique est chargee
+ * @param function callback
+ *
+ */
+musicControllerInterface.prototype.onLoaded = function (callback) {
+    this.musicElement.onloadeddata = callback;
+};
+
+
+
+/**
+ *
  * Joue la musique
  *
  */
@@ -51,11 +63,7 @@ musicControllerInterface.prototype.stop = function () {
  *
  */
 musicControllerInterface.prototype.getTime = function () {
-    var currentTime = this.musicElement.currentTime +"";
-    currentTime = currentTime.split('.');
-    currentTime = currentTime[0] +"."+ currentTime[1][0];
-
-    return parseFloat(currentTime);
+    return this.musicElement.currentTime;
 };
 
 

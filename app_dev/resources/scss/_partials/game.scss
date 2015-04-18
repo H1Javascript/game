@@ -61,6 +61,9 @@
         left: -116px;
         opacity: 0;
         -webkit-animation: reduce 800ms;
+        -moz-animation: reduce 800ms;
+        -o-animation: reduce 800ms;
+        animation: reduce 800ms;
 
         &.left {
             border: solid 15px red;
@@ -80,6 +83,28 @@
     }
 
     @-webkit-keyframes reduce {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0.5;
+            transform: scale(0.33);
+        }
+    }
+
+    @-moz-keyframes reduce {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0.5;
+            transform: scale(0.33);
+        }
+    }
+
+    @keyframes reduce {
         0% {
             opacity: 1;
             transform: scale(1);
