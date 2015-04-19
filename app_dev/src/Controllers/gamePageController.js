@@ -146,9 +146,6 @@ gamePageController.share = function () {
 
     var defisUrl =  encodeURIComponent("http://rhythmnastic.herokuapp.com#/defis/"+ musicsModel.getChosenId() +":"+ points);
     var message = "Essais de battre "+ points +" points sur '"+ music.title +"' de "+ music.artist;
-    // Debug
-    //defisUrl = "http://facebook.com";
-
 
     var facebookUrl = "https://www.facebook.com/dialog/feed?";
     facebookUrl += "app_id=354808114719015&";
