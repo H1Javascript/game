@@ -1,11 +1,11 @@
 # Rhythmnastic
 
 ### Equipe
-1. Kevin TAN (Chef de projet & Designer)
-2. Bastien BERGAGLIA (Responsable communication)
-3. Bethsabée GRESSE (Directeur artistique)
-4. Sephora MASSOUNGA DE QUERSIS (Responsable communication)
-5. Romain QUILLIOT (Développeur)
+1. **Kevin TAN** (Chef de projet & Designer)
+2. **Bastien BERGAGLIA** (Responsable communication)
+3. **Bethsabée GRESSE** (Directeur artistique)
+4. **Sephora MASSOUNGA DE QUERSIS** (Responsable communication)
+5. **Romain QUILLIOT** (Développeur)
 
 ------------------------------------
 
