@@ -13,7 +13,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 
 // Container
-Container.add('storageOnline', new storageOnlineInterfaceComponent({secret: 'Ns/cn0NTQkYdRLJfYT3pFd+eATJt+6RNzw3HVuY5', key: 'AKIAIS5UWNY6W6BZVIAA'}, 'assets.repoleak.com', 'HETIC/Rhythmnastic/Database/'));
+Container.add('storageOnline', new storageOnlineInterfaceComponent({secret: '', key: ''}, 'assets.repoleak.com', 'HETIC/Rhythmnastic/Database/'));
 
 
 // Listening Routes
